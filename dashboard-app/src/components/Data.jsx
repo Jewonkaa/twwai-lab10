@@ -14,7 +14,7 @@ export function Data() {
 
     useEffect(() => {
         const fetchAir = async() => {
-            const res = await fetch("https://twwai-projekt.herokuapp.com/api/params/last");
+            const res = await fetch("https://twwai-lab10.herokuapp.com/api/params/last");
             const dataRes = await res.json();
             chartDataSet(dataRes);
         }
