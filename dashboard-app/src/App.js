@@ -1,27 +1,14 @@
-
 import './App.css';
+import 'react-calendar/dist/Calendar.css';
 
-// w tym miejscu import komponentu
-import {Data} from "./components/Data";
-import { LineChart } from './components/LineChart';
-
-const styles = {
-   display: 'flex',
-   justifyContent: 'space-between'
-};
+import {NavBar} from "./components/NavBar";
+import {Dashboard} from "./components/Dashboard";
 
 function App() {
-  
    return (
        <div className="App">
-           <div style={styles}>
-               <div className="col-2">
-                   <Data/>
-               </div>
-               <div className="col-10">
-                  <LineChart/>
-               </div>
-           </div>
+           <NavBar/>
+           <Dashboard/>
        </div>
    );
 }

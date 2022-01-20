@@ -16,6 +16,15 @@ paramSchema.plugin(uniqueValidator);
 
 const ParamModel = mongoose.model('params', paramSchema);
 
+async function getDataDay(content) {
+    const result = await ParamModel.find({date: {$regex: content}});
+    {
+        if(result) {
+            return mongoConverter(result);
+        }
+    }
+}
+
 async function query() {
     const result = await ParamModel.find({});
     {
@@ -47,6 +56,7 @@ export default {
     query: query,
     get: get,
     getLast,
+    getDataDay,
 
     model: ParamModel
 };

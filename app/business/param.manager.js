@@ -1,6 +1,9 @@
 import paramDAO from '../DAO/paramDAO';
 
 function create() {
+
+    
+
     async function query() {
         //funkcja pobierająca wszystkie wpisy
         let result = paramDAO.query();
@@ -25,10 +28,19 @@ function create() {
         }
     }
 
+    async function getDataDay(date) {
+        
+        let result = paramDAO.getDataDay(date);
+        if(result) {
+            return result;
+        }
+    }
+
     return {
         query: query,
         get: get,
-        getLast
+        getLast,
+        getDataDay
     };
 }
 

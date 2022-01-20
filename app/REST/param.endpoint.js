@@ -1,7 +1,19 @@
 import business from '../business/business.container';
 import applicationException from "../service/applicationException";
 
+
+
 const paramEndpoint = (router) => {
+
+    router.get('/api/params/search/:date', async(req,res) => {
+        try{
+            let result = await business.getParamManager().getDataDay(req.params.date);
+            res.status(200).send(result);
+        } catch (error) {
+            applicationException.errorHandler(error,res);
+        }
+    })
+
     router.get('/api/params', async (request, response, next) => {
         try {
             let result = await business.getParamManager().query();
@@ -30,4 +42,5 @@ const paramEndpoint = (router) => {
         }
     })
 };
+
 export default paramEndpoint;

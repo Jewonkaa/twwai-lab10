@@ -23,8 +23,10 @@
     "mongoose-bird": "0.0.1",
     "mongoose-unique-validator": "3.0.0",
     "morgan": "1.10.0",
+    "react-calendar": "^3.6.0",
+    "save": "^2.4.0",
     "sha1": "1.1.1",
-    "socket.io": "2.0.4",
+    "socket.io": "^2.0.4",
     "vision": "4.1.0"
   },
   "author": "Darek",
